@@ -1,10 +1,4 @@
-﻿let divisors = [2..20]
-let isDivisible divs x =
-    printfn "%d" x
-    divs |> List.fold (fun s d -> x%d=0) true 
+﻿let isDivisible d x =
+    d |> List.fold (fun s i -> s && x % i = 0) true
 
-Seq.initInfinite (fun i -> i*20)
-//seq{1..20..1000000} 
-|> Seq.filter (isDivisible divisors)
-|> Seq.min
-
+Seq.initInfinite (fun i -> (i+1)*20) |> Seq.find (isDivisible [2..20])
