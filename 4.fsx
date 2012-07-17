@@ -18,4 +18,4 @@ let p = seq{100..999}
 let q = seq{for i in p do for j in p do yield i*j}
 
 //solution
-q |> Seq.filter (fun x -> isP x) |> Seq.max
+q |> Seq.filter isP |> Seq.max
