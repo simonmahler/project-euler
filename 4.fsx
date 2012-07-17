@@ -8,6 +8,7 @@ let getNthDigit (x : int) (n : int) =
 let digitsEqual (x : int) (len : int) (n : int) =
     (getNthDigit x n) = (getNthDigit x (len-n+1))
 
+//is pelindrome?
 let isP (n : int) =
     let len = int (Math.Log10 (float n))+1
     let i = [1..len/2]
@@ -15,8 +16,6 @@ let isP (n : int) =
 
 let p = seq{100..999}    
 let q = seq{for i in p do for j in p do yield i*j}
-q |> Seq.filter (fun x -> isP x) |> Seq.max
 
-//getNthDigit 253 1
-//isP 2234322
-//digitsEqual 2 1 1
+//solution
+q |> Seq.filter (fun x -> isP x) |> Seq.max
