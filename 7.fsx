@@ -18,7 +18,3 @@ seq{2..n}
     primes.[i] <- getPrime i)
 
 primes.[n]
-
-
-
-//104743
